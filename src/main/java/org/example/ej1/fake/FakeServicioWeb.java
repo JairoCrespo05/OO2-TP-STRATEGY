@@ -1,6 +1,9 @@
 package org.example.ej1.fake;
 
-public class FakeServicioWeb {
+import org.example.ej1.EnvioProducto;
+import org.example.ej1.WebService;
+
+public class FakeServicioWeb implements WebService {
     private String url /* = "http://distancia.ar?orgen=capital&destino=xxx"*/;
 
     static final double DISTANCIA = 55.5;
@@ -9,6 +12,7 @@ public class FakeServicioWeb {
         this.url = url;
     }
 
+    @Override
     public double calcularPrecioXDistancia(String destino){
         System.out.println("Accediendo al servicio Web :" + this.url);
 

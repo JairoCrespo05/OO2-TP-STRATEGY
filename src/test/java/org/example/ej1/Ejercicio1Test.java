@@ -1,5 +1,6 @@
 package org.example.ej1;
 
+import org.example.ej1.fake.FakeServicioWeb;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,9 +17,10 @@ class Ejercicio1Test {
         carrito.agregarAlCarrito(p2);
 
         var cliente = new Cliente("Jose", carrito, "Buenos Aires",
-                new CorreoArgentino(new ServicioWeb("http://distancia.ar?orgen=capital&destino=xxx")));
+                new CorreoArgentino(new FakeServicioWeb("http://distancia.ar?orgen=capital&destino=xxx")));
 
-        cliente.hacerPedido();
+
+        assertEquals(6077.5, cliente.hacerPedido());
     }
 
 
@@ -35,9 +37,9 @@ class Ejercicio1Test {
         var cliente = new Cliente("Jose", carrito, "Buenos Aires",
                 new ColectivoSur());
 
-        cliente.hacerPedido();
 
 
+        assertEquals(7000.0, cliente.hacerPedido());
 
     }
 }

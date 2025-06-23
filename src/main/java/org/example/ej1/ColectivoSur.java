@@ -10,7 +10,7 @@ public class ColectivoSur implements EnvioProducto{
     }
 
     @Override
-    public void enviarPedido(CarritoDeCompras carritoDeCompras, String destino) {
+    public double enviarPedido(CarritoDeCompras carritoDeCompras, String destino) {
 
         double precioTotal = carritoDeCompras.precioTotal();
         double pesoTotal = carritoDeCompras.pesoTotal();
@@ -32,6 +32,6 @@ public class ColectivoSur implements EnvioProducto{
         }
 
         System.out.println("Colectivo Sur, el monto total es de :" + precioTotal);
-
+        return precioTotal;
     }
 }

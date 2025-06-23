@@ -15,8 +15,8 @@ public class Cliente {
         this.envioProducto = envioProducto;
     }
 
-    public void hacerPedido(){
-        this.envioProducto.enviarPedido(this.carrito, this.ubicacion);
+    public double hacerPedido(){
+        return this.envioProducto.enviarPedido(this.carrito, this.ubicacion);
     }
 
 }

@@ -10,13 +10,13 @@ public class MainEj1 {
         carrito.agregarAlCarrito(p1);
         carrito.agregarAlCarrito(p2);
 
-        var cliente = new Cliente("Jose", carrito, "Buenos Aires",
-                new CorreoArgentino(new ServicioWeb("http://distancia.ar?orgen=capital&destino=xxx")));
-
 //        var cliente = new Cliente("Jose", carrito, "Buenos Aires",
-//                new ColectivoSur();
+//                new CorreoArgentino(new ServicioWeb("http://distancia.ar?orgen=capital&destino=xxx")));
 
-        cliente.hacerPedido();
+        var cliente = new Cliente("Jose", carrito, "Buenos Aires",
+                new ColectivoSur());
+
+        System.out.println("precio total: " + cliente.hacerPedido());
 
     }
 }

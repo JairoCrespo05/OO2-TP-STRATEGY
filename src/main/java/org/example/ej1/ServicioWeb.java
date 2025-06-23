@@ -3,13 +3,13 @@ package org.example.ej1;
 
 import java.awt.font.NumericShaper;
 
-public class ServicioWeb {
+public class ServicioWeb implements WebService{
     private String url /* = "http://distancia.ar?orgen=capital&destino=xxx"*/;
 
     public ServicioWeb(String url){
         this.url = url;
     }
-
+    @Override
     public double calcularPrecioXDistancia(String destino){
         System.out.println("Accediendo al servicio Web :" + this.url);
 

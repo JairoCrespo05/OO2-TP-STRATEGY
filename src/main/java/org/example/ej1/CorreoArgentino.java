@@ -3,14 +3,14 @@ package org.example.ej1;
 public class CorreoArgentino implements EnvioProducto{
 
     static final String CAPITAL_FEDERAL = "Capital Federal";
-    private ServicioWeb servicioWeb;
+    private WebService servicioWeb;
 
-    public CorreoArgentino(ServicioWeb servicioWeb){
+    public CorreoArgentino(WebService servicioWeb){
         this.servicioWeb = servicioWeb;
     }
 
     @Override
-    public void enviarPedido(CarritoDeCompras carritoDeCompras, String destino) {
+    public double enviarPedido(CarritoDeCompras carritoDeCompras, String destino) {
         double precioTotal = carritoDeCompras.precioTotal();
         double pesoTotal = carritoDeCompras.pesoTotal();
 
@@ -22,6 +22,7 @@ public class CorreoArgentino implements EnvioProducto{
 
         System.out.println("Correo Argentino, el monto total es de :" + precioTotal);
 
+        return precioTotal;
     }
 
 }
